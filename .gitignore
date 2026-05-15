@@ -9,12 +9,19 @@ tools/
 
 # Data and generated files
 data/
+checkpoints/
+logs/
+runs/
+wandb/
 node_modules/
 build/
+dist/
 Objects/
 Listings/
 Debug/
 Release/
+__pycache__/
+*.pyc
 
 # Documents and archives
 *.doc
