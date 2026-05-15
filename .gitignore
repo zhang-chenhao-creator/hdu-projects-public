@@ -1,0 +1,45 @@
+# Local/editor state
+.vscode/
+.settings/
+.claude/
+.eide/
+conversations/
+Backup/
+tools/
+
+# Data and generated files
+data/
+node_modules/
+build/
+Objects/
+Listings/
+Debug/
+Release/
+
+# Documents and archives
+*.doc
+*.docx
+*.ppt
+*.pptx
+*.pdf
+*.xls
+*.xlsx
+*.zip
+*.7z
+
+# Firmware/build outputs
+*.exe
+*.hex
+*.axf
+*.elf
+*.bin
+*.o
+*.obj
+*.map
+*.lst
+*.crf
+*.d
+*.dep
+*.lnp
+*.log
+*.bak

@@ -1,0 +1,198 @@
+2026-4-29, 03:50:55.826 UTC
+[03:50:55.827 UTC] From client: initialize({"clientID":"vscode","clientName":"Visual Studio Code","adapterID":"stgdbtarget","pathFormat":"path","linesStartAt1":true,"columnsStartAt1":true,"supportsVariableType":true,"supportsVariablePaging":true,"supportsRunInTerminalRequest":true,"locale":"zh-cn","supportsProgressReporting":true,"supportsInvalidatedEvent":true,"supportsMemoryReferences":true,"supportsArgsCanBeInterpretedByShell":true,"supportsMemoryEvent":true,"supportsStartDebuggingRequest":true,"supportsANSIStyling":true})
+[03:50:55.827 UTC] To client: {"seq":0,"type":"response","request_seq":1,"command":"initialize","success":true,"body":{"supportsEvaluateForHovers":true,"supportsConfigurationDoneRequest":true,"supportsSetVariable":true,"supportsConditionalBreakpoints":true,"supportsHitConditionalBreakpoints":true,"supportsLogPoints":true,"supportsFunctionBreakpoints":true,"supportsDisassembleRequest":true,"supportsReadMemoryRequest":true,"supportsWriteMemoryRequest":true,"supportsSteppingGranularity":true}}
+[03:50:55.827 UTC] From client: launch({"type":"stgdbtarget","request":"launch","name":"STM32Cube: STM32 Launch Generic GDB Server","origin":"snippet","cwd":"D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED","preBuild":"","program":"D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED/build/Debug/Homework3_MicLED.elf","gdb":"C:/Users/konja/.eide/tools/gcc_arm/bin/arm-none-eabi-gdb.exe","deviceName":"STM32F407VET6","deviceCore":"Cortex-M4","serverExe":"openocd.exe","serverParameters":["-f","interface/cmsis-dap.cfg","-f","target/stm32f4x.cfg"],"serverHost":"localhost","serverPort":"3333","serverCwd":"C:/Program Files/xpack-openocd-0.12.0-7/bin","verbose":true,"logFile":"D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED/gdbClient_log.txt","runEntry":"main","imagesAndSymbols":[{"imageFileName":"D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED/build/Debug/Homework3_MicLED.elf","imageOffset":"","symbolFileName":"D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED/build/Debug/Homework3_MicLED.elf","symbolOffset":""}],"__configurationTarget":6,"__sessionId":"2f09eb6c-0e65-4610-986d-9c007d7482a4"})
+[03:50:55.827 UTC] From Debug Session: start Launch Sequence
+[03:50:57.154 UTC] From Debug Session: Step validate debug configuration
+[03:50:57.755 UTC] From Debug Session: Step ST-Link device check
+[03:50:57.755 UTC] From Debug Session: Step start gdb server
+[03:50:57.756 UTC] GDB Server command line executed: C:\Program Files\xpack-openocd-0.12.0-7\bin\openocd.exe -f interface/cmsis-dap.cfg -f target/stm32f4x.cfg
+[03:50:57.768 UTC] From Debug Session: Step check genuine ST device
+[03:50:57.768 UTC] From Debug Session: Step start RTOS Proxie(s)
+[03:50:57.769 UTC] From Debug Session: Step start gdb client debug
+[03:50:57.824 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:44)\r\nLicensed under GNU GPL v2\r\nFor bug reports, read\r\n\thttp://openocd.org/doc/doxygen/bugs.html\r\n"}}
+[03:50:57.829 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"Warn : DEPRECATED: auto-selecting transport \"swd\". Use 'transport s"}}
+[03:50:57.830 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"elect swd' to suppress this message.\r\n"}}
+[03:50:57.833 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"Info : Listening on port 6666 for tcl connections\r\nInfo :"}}
+[03:50:57.834 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":" Listening on port 4444 for telnet connections\r\n"}}
+[03:50:57.926 UTC] GDB notify async: thread-group-added,id="i1"
+[03:50:57.927 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"GNU gdb (Arm GNU Toolchain 14.3.Rel1 (Build arm-14.174)) 15.2.90.20241229-git\n"}}
+[03:50:57.927 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"Copyright (C) 2024 Free Software Foundation, Inc.\n"}}
+[03:50:57.927 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law."}}
+[03:50:57.927 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"\nType \"show copying\" and \"show warranty\" for details.\n"}}
+[03:50:57.927 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"This GDB was configured as \"--host=x86_64-w64-mingw32 --target=arm-none-eabi\".\n"}}
+[03:50:57.927 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"Type \"show configuration\" for configuration details.\n"}}
+[03:50:57.927 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"For bug reporting instructions, please see:\n"}}
+[03:50:57.927 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"<https://bugs.linaro.org/>.\n"}}
+[03:50:57.927 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"Find the GDB manual and other documentation resources online at:\n    <"}}
+[03:50:57.927 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"http://www.gnu.org/software/gdb/documentation/>.\n\n"}}
+[03:50:57.927 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"For help, type \"help\".\n"}}
+[03:50:57.928 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"Type \"apropos word\" to search for commands related to \"word\".\n"}}
+[03:50:57.928 UTC] GDB command: 0 -gdb-set non-stop off
+[03:50:57.940 UTC] GDB result: 0 done
+[03:50:57.941 UTC] GDB command: 1 -gdb-set mi-async on
+[03:50:57.959 UTC] GDB result: 1 done
+[03:50:57.959 UTC] From Debug Session: Step load program
+[03:50:57.960 UTC] GDB command: 2 -file-exec-and-symbols "D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED/build/Debug/Homework3_MicLED.elf"
+[03:50:58.021 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"Info : CMSIS-DAP: SWD supported\r\nInfo : CMSIS-DAP: SWO-UART supported\r\nInfo : CMSIS-DAP: Atomic commands supported\r\nInfo : CMSIS-DAP: Test do"}}
+[03:50:58.021 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"main timer supported\r\n"}}
+[03:50:58.023 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"Info : CMSIS-DAP: FW Version = 2.0.0\r\n"}}
+[03:50:58.094 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"Info : CMSIS-DAP: Interface Initialised (SWD)\r\n"}}
+[03:50:58.100 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1"}}
+[03:50:58.100 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"\r\n"}}
+[03:50:58.110 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"Info : CMSIS-DAP: Interface ready\r\n"}}
+[03:50:58.112 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"Info : clock speed 2000 kHz\r\n"}}
+[03:50:58.118 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"Info : SWD DPIDR 0x2ba01477\r\n"}}
+[03:50:58.132 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"Info : [stm32f4x.cpu] Cortex-M4 r0p1 processor detected\r\n"}}
+[03:50:58.194 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"Info : [stm32f4x.cpu] target has 6 breakpoints, 4 watchpoints\r\n"}}
+[03:50:58.202 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"Info : [stm32f4x.cpu] Examination succeed\r\n"}}
+[03:50:58.202 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"Info : [stm32f4x.cpu] starting gdb server on 3333\r\n"}}
+[03:50:58.203 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"Info : Listening on port 3333 for gdb connections\r\n"}}
+[03:51:04.065 UTC] GDB result: 2 done
+[03:51:04.065 UTC] From Debug Session: Step load symbols
+[03:51:04.066 UTC] GDB command: 3 -enable-pretty-printing
+[03:51:04.087 UTC] GDB result: 3 done
+[03:51:04.087 UTC] From Debug Session: Step load symbols D:\Courseworks\2025-2026-2\Real-Time Embedded Systems and Intelligent Control\Homework3_MicLED/build/Debug/Homework3_MicLED.elf 
+[03:51:04.087 UTC] GDB command: 4 add-symbol-file "D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED/build/Debug/Homework3_MicLED.elf" 
+[03:51:04.104 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"log","output":"add-symbol-file \"D:\\\\Courseworks\\\\2025-2026-2\\\\Real-Time Embedded Systems and Intelligent Control\\\\Homework3_MicLED/build/Debug/Homework3_MicLED.elf\" \n"}}
+[03:51:04.105 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"add symbol table from file \"D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED/build/Debug/Homework3_MicLED.elf\"\n"}}
+[03:51:04.105 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"(y or n) [answered Y; input not from terminal]\n"}}
+[03:51:04.105 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"Reading symbols from D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED/build/Debug/Homework3_MicLED.elf...\n"}}
+[03:51:04.106 UTC] GDB result: 4 done
+[03:51:04.106 UTC] From Debug Session: Step connect to target
+[03:51:04.107 UTC] GDB command: 5 -target-select remote localhost:3333
+[03:51:06.196 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"Info : accepting 'gdb' connection on tcp/3333\r\n"}}
+[03:51:06.223 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"[stm32f4x.cpu] halted due to debug-request"}}
+[03:51:06.223 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":", current mode: Thread \r\nxPSR: 0x81000000 pc: 0x08001b0a psp: 0x20003fc0\r\n"}}
+[03:51:06.225 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"Info : device id = 0x101f6413\r\n"}}
+[03:51:06.229 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"Info : flash size = 512 KiB\r\nInfo :"}}
+[03:51:06.229 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":" flash size = 512 bytes\r\n"}}
+[03:51:06.236 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"Warn : Prefer GDB command \"target extended-remote :3333\" instead of \"target remote :3333\"\r\n"}}
+[03:51:06.237 UTC] GDB notify async: thread-group-started,id="i1",pid="42000"
+[03:51:06.237 UTC] GDB notify async: thread-created,id="1",group-id="i1"
+[03:51:06.241 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"prvCheckTasksWaitingTermination () at D:/Courseworks/2025-2026-2/Real-Time Embedded Systems and Intelligent Control/Homework3_MicLED/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:3650\n"}}
+[03:51:06.242 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"3650\t\t\twhile( uxDeletedTasksWaitingCleanUp > ( UBaseType_t ) 0U )\n"}}
+[03:51:06.242 UTC] GDB exec async: stopped,frame={addr="0x08001b0a",func="prvCheckTasksWaitingTermination",args=[],file="D:/Courseworks/2025-2026-2/Real-Time Embedded Systems and Intelligent Control/Homework3_MicLED/Middlewares/Third_Party/FreeRTOS/Source/tasks.c",fullname="D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED\\Middlewares\\Third_Party\\FreeRTOS\\Source\\tasks.c",line="3650",arch="armv7e-m"},thread-id="1",stopped-threads="all"
+[03:51:06.243 UTC] GDB result: 5 connected
+[03:51:06.243 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"console","output":"connected to remote target localhost:3333"}}
+[03:51:06.243 UTC] From Debug Session: Step execute init commands
+[03:51:06.243 UTC] GDB command: 6 tbreak main
+[03:51:06.243 UTC] From Debug Session: Step load images
+[03:51:06.243 UTC] GDB command: 7 load "D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED/build/Debug/Homework3_MicLED.elf" 
+[03:51:06.258 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"log","output":"tbreak main\n"}}
+[03:51:06.260 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"log","output":"warning: could not convert 'main' from the host encoding (CP1252) to UTF-32.\nThis normally should not happen, please file a bug report."}}
+[03:51:06.260 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"log","output":"\n"}}
+[03:51:06.264 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"Temporary breakpoint 1 at 0x8002354: file D:/Courseworks/2025-2026-2/Real-Time Embedded Systems and Intelligent Control/Homework3_MicLED/Core/Src/main.c, line 77.\n"}}
+[03:51:06.264 UTC] GDB notify async: breakpoint-created,bkpt={number="1",type="breakpoint",disp="del",enabled="y",addr="0x08002354",func="main",file="D:/Courseworks/2025-2026-2/Real-Time Embedded Systems and Intelligent Control/Homework3_MicLED/Core/Src/main.c",fullname="D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED\\Core\\Src\\main.c",line="77",thread-groups=["i1"],times="0",original-location="main"}
+[03:51:06.265 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"Note: automatically using hardware breakpoints for read-only addresses.\n"}}
+[03:51:06.265 UTC] GDB result: 6 done
+[03:51:06.265 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"log","output":"load \"D:\\\\Courseworks\\\\2025-2026-2\\\\Real-Time Embedded Systems and Intelligent Control\\\\Homework3_MicLED/build/Debug/Homework3_MicLED.elf\" \n"}}
+[03:51:06.453 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"[stm32f4x.cpu] halted due to debug-r"}}
+[03:51:06.453 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"equest, current mode: Thread \r\nxPSR: 0x01000000 pc: 0x08002cf4 msp: 0x20020000\r\n"}}
+[03:51:06.821 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"Loading section .isr_vector, size 0x188 lma 0x8000000\n"}}
+[03:51:06.822 UTC] GDB status async: download,{section=".isr_vector",section-size="392",total-size="300903"}
+[03:51:06.823 UTC] GDB status async: download,{section=".isr_vector",section-sent="392",section-size="392",total-sent="392",total-size="300903"}
+[03:51:06.823 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"Loading section .text, size 0x2de8 lma 0x8000190\n"}}
+[03:51:06.823 UTC] GDB status async: download,{section=".text",section-size="11752",total-size="300903"}
+[03:51:06.823 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"Loading section .rodata, size 0x9c lma 0x8002f78\n"}}
+[03:51:06.823 UTC] GDB status async: download,{section=".rodata",section-size="156",total-size="300903"}
+[03:51:06.823 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"Loading section .ARM, size 0x10 lma 0x8003014\n"}}
+[03:51:06.823 UTC] GDB status async: download,{section=".ARM",section-size="16",total-size="300903"}
+[03:51:06.823 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"Loading section .preinit_array, size 0x4 lma 0x8003024\n"}}
+[03:51:06.823 UTC] GDB status async: download,{section=".preinit_array",section-size="4",total-size="300903"}
+[03:51:06.824 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"Loading section .data, size 0x14 lma 0x8003028\n"}}
+[03:51:06.824 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"Info : Padding image section 0 at 0x08000188 with 8 bytes\r\n"}}
+[03:51:06.824 UTC] GDB status async: download,{section=".data",section-size="20",total-size="300903"}
+[03:51:07.414 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"[stm32f4x.cpu] halted due to debug-request, current mode: T"}}
+[03:51:07.414 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"hread \r\nxPSR: 0x01000000 pc: 0x08002cfc msp: 0x20020000\r\n"}}
+[03:51:07.416 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"Start address 0x08002cfc, load size 12340\n"}}
+[03:51:07.422 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"Transfer rate: 10 KB/sec, 2056 bytes/write.\n"}}
+[03:51:07.422 UTC] GDB result: 7 done
+[03:51:07.422 UTC] From Debug Session: Step register post programming
+[03:51:07.423 UTC] From Debug Session: Step pre run commands
+[03:51:07.423 UTC] From Debug Session: Step initialized request
+[03:51:07.423 UTC] To client: {"seq":0,"type":"event","event":"initialized"}
+[03:51:07.423 UTC] To client: {"seq":0,"type":"response","request_seq":2,"command":"launch","success":true}
+[03:51:07.427 UTC] From client: adapter/getDebugConfResolved(undefined)
+[03:51:07.428 UTC] To client: {"seq":0,"type":"response","request_seq":3,"command":"adapter/getDebugConfResolved","success":true,"body":{"type":"stgdbtarget","request":"launch","name":"STM32Cube: STM32 Launch Generic GDB Server","origin":"snippet","cwd":"D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED","preBuild":"","program":"D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED/build/Debug/Homework3_MicLED.elf","gdb":"C:/Users/konja/.eide/tools/gcc_arm/bin/arm-none-eabi-gdb.exe","deviceName":"STM32F407VET6","deviceCore":"Cortex-M4","serverExe":"openocd.exe","serverParameters":["-f","interface/cmsis-dap.cfg","-f","target/stm32f4x.cfg"],"serverHost":"localhost","serverPort":"3333","serverCwd":"C:/Program Files/xpack-openocd-0.12.0-7/bin","verbose":true,"logFile":"D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED/gdbClient_log.txt","runEntry":"main","imagesAndSymbols":[{"imageFileName":"D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED/build/Debug/Homework3_MicLED.elf","imageOffset":"","symbolFileName":"D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED/build/Debug/Homework3_MicLED.elf","symbolOffset":""}],"__configurationTarget":6,"__sessionId":"2f09eb6c-0e65-4610-986d-9c007d7482a4","__pid":38272,"__initialConfig":{"type":"stgdbtarget","request":"launch","name":"STM32Cube: STM32 Launch Generic GDB Server","origin":"snippet","cwd":"D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED","preBuild":"","program":"D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED/build/Debug/Homework3_MicLED.elf","gdb":"C:/Users/konja/.eide/tools/gcc_arm/bin/arm-none-eabi-gdb.exe","deviceName":"STM32F407VET6","deviceCore":"Cortex-M4","serverExe":"openocd.exe","serverParameters":["-f","interface/cmsis-dap.cfg","-f","target/stm32f4x.cfg"],"serverHost":"localhost","serverPort":"3333","serverCwd":"C:/Program Files/xpack-openocd-0.12.0-7/bin","verbose":true,"logFile":"D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED/gdbClient_log.txt","runEntry":"main","imagesAndSymbols":[{"imageFileName":"D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED/build/Debug/Homework3_MicLED.elf","imageOffset":"","symbolFileName":"D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED/build/Debug/Homework3_MicLED.elf","symbolOffset":""}],"__configurationTarget":6,"__sessionId":"2f09eb6c-0e65-4610-986d-9c007d7482a4","__pid":38272},"deviceTrustzone":"TZ-disabled","svdPath":"C:\\Users\\konja\\AppData\\Local\\stm32cube\\packs\\STMicroelectronics\\stm32f4xx_dfp\\1.2.0\\SVD\\STM32F407.svd"}}
+[03:51:07.428 UTC] From client: setFunctionBreakpoints({"breakpoints":[]})
+[03:51:07.429 UTC] GDB command: 8 -break-list
+[03:51:07.439 UTC] GDB result: 8 done,BreakpointTable={nr_rows="1",nr_cols="6",hdr=[{width="7",alignment="-1",col_name="number",colhdr="Num"},{width="14",alignment="-1",col_name="type",colhdr="Type"},{width="4",alignment="-1",col_name="disp",colhdr="Disp"},{width="3",alignment="-1",col_name="enabled",colhdr="Enb"},{width="10",alignment="-1",col_name="addr",colhdr="Address"},{width="40",alignment="2",col_name="what",colhdr="What"}],body=[bkpt={number="1",type="breakpoint",disp="del",enabled="y",addr="0x08002354",func="main",file="D:/Courseworks/2025-2026-2/Real-Time Embedded Systems and Intelligent Control/Homework3_MicLED/Core/Src/main.c",fullname="D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED\\Core\\Src\\main.c",line="77",thread-groups=["i1"],times="0",original-location="main"}]}
+[03:51:07.439 UTC] To client: {"seq":0,"type":"response","request_seq":4,"command":"setFunctionBreakpoints","success":true,"body":{"breakpoints":[]}}
+[03:51:07.469 UTC] From client: configurationDone(undefined)
+[03:51:07.470 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"console","output":"\nIn the Debug Console view you can interact directly with GDB.\nTo display the value of an expression, type that expression which can reference\nvariables that are in scope. For example type '2 + 3' or the name of a variable.\nArbitrary commands can be sent to GDB by prefixing the input with a '>',\nfor example type '>show version' or '>help'.\n\n"}}
+[03:51:07.470 UTC] GDB command: 9 -exec-continue
+[03:51:07.474 UTC] GDB result: 9 running
+[03:51:07.474 UTC] GDB exec async: running,thread-id="all"
+[03:51:07.474 UTC] To client: {"seq":0,"type":"event","event":"continued","body":{"threadId":1,"allThreadsContinued":true}}
+[03:51:07.474 UTC] To client: {"seq":0,"type":"response","request_seq":5,"command":"configurationDone","success":true}
+[03:51:07.553 UTC] GDB notify async: breakpoint-modified,bkpt={number="1",type="breakpoint",disp="del",enabled="y",addr="0x08002354",func="main",file="D:/Courseworks/2025-2026-2/Real-Time Embedded Systems and Intelligent Control/Homework3_MicLED/Core/Src/main.c",fullname="D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED\\Core\\Src\\main.c",line="77",thread-groups=["i1"],times="1",original-location="main"}
+[03:51:07.558 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"\n"}}
+[03:51:07.558 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"Temporary breakpoint 1, main () at D:/Courseworks/2025-2026-2/Real-Time Embedded Systems and Intelligent Control/Homework3_MicLED/Core/Src/main.c:77\n"}}
+[03:51:07.558 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"stdout","output":"77\t  HAL_Init();\n"}}
+[03:51:07.558 UTC] GDB exec async: stopped,reason="breakpoint-hit",disp="del",bkptno="1",frame={addr="0x08002354",func="main",args=[],file="D:/Courseworks/2025-2026-2/Real-Time Embedded Systems and Intelligent Control/Homework3_MicLED/Core/Src/main.c",fullname="D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED\\Core\\Src\\main.c",line="77",arch="armv7e-m"},thread-id="1",stopped-threads="all"
+[03:51:07.559 UTC] To client: {"seq":0,"type":"event","event":"stopped","body":{"reason":"breakpoint","allThreadsStopped":true,"threadId":1}}
+[03:51:07.559 UTC] GDB notify async: breakpoint-deleted,id="1"
+[03:51:07.604 UTC] From client: threads(undefined)
+[03:51:07.604 UTC] GDB command: 10 -thread-info
+[03:51:07.613 UTC] From client: readMemory({"memoryReference":"0xE000ED2C","count":4})
+[03:51:07.613 UTC] GDB command: 11 -data-read-memory-bytes -o 0 "0xE000ED2C" 4
+[03:51:07.615 UTC] From client: readMemory({"memoryReference":"0xE000ED29","count":1})
+[03:51:07.615 UTC] GDB command: 12 -data-read-memory-bytes -o 0 "0xE000ED29" 1
+[03:51:07.615 UTC] From client: readMemory({"memoryReference":"0xE000ED28","count":1})
+[03:51:07.615 UTC] GDB command: 13 -data-read-memory-bytes -o 0 "0xE000ED28" 1
+[03:51:07.615 UTC] From client: readMemory({"memoryReference":"0xE000ED2A","count":2})
+[03:51:07.615 UTC] GDB command: 14 -data-read-memory-bytes -o 0 "0xE000ED2A" 2
+[03:51:07.615 UTC] From client: readMemory({"memoryReference":"0xE000EDE4","count":1})
+[03:51:07.615 UTC] GDB command: 15 -data-read-memory-bytes -o 0 "0xE000EDE4" 1
+[03:51:07.615 UTC] From client: threads(undefined)
+[03:51:07.615 UTC] GDB command: 16 -thread-info
+[03:51:07.620 UTC] GDB result: 10 done,threads=[{id="1",target-id="Remote target",frame={level="0",addr="0x08002354",func="main",args=[],file="D:/Courseworks/2025-2026-2/Real-Time Embedded Systems and Intelligent Control/Homework3_MicLED/Core/Src/main.c",fullname="D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED\\Core\\Src\\main.c",line="77",arch="armv7e-m"},state="stopped"}],current-thread-id="1"
+[03:51:07.620 UTC] To client: {"seq":0,"type":"response","request_seq":6,"command":"threads","success":true,"body":{"threads":[{"id":1,"name":"1","running":false}]}}
+[03:51:07.623 UTC] GDB result: 11 done,memory=[{begin="0xe000ed2c",offset="0x00000000",end="0xe000ed30",contents="00000000"}]
+[03:51:07.623 UTC] To client: {"seq":0,"type":"response","request_seq":7,"command":"readMemory","success":true,"body":{"data":"AAAAAA==","address":"0xe000ed2c"}}
+[03:51:07.628 UTC] GDB result: 12 done,memory=[{begin="0xe000ed29",offset="0x00000000",end="0xe000ed2a",contents="00"}]
+[03:51:07.629 UTC] To client: {"seq":0,"type":"response","request_seq":8,"command":"readMemory","success":true,"body":{"data":"AA==","address":"0xe000ed29"}}
+[03:51:07.632 UTC] GDB result: 13 done,memory=[{begin="0xe000ed28",offset="0x00000000",end="0xe000ed29",contents="00"}]
+[03:51:07.632 UTC] To client: {"seq":0,"type":"response","request_seq":9,"command":"readMemory","success":true,"body":{"data":"AA==","address":"0xe000ed28"}}
+[03:51:07.634 UTC] GDB result: 14 done,memory=[{begin="0xe000ed2a",offset="0x00000000",end="0xe000ed2c",contents="0000"}]
+[03:51:07.634 UTC] To client: {"seq":0,"type":"response","request_seq":10,"command":"readMemory","success":true,"body":{"data":"AAA=","address":"0xe000ed2a"}}
+[03:51:07.637 UTC] GDB result: 15 done,memory=[{begin="0xe000ede4",offset="0x00000000",end="0xe000ede5",contents="00"}]
+[03:51:07.637 UTC] To client: {"seq":0,"type":"response","request_seq":11,"command":"readMemory","success":true,"body":{"data":"AA==","address":"0xe000ede4"}}
+[03:51:07.638 UTC] GDB result: 16 done,threads=[{id="1",target-id="Remote target",frame={level="0",addr="0x08002354",func="main",args=[],file="D:/Courseworks/2025-2026-2/Real-Time Embedded Systems and Intelligent Control/Homework3_MicLED/Core/Src/main.c",fullname="D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED\\Core\\Src\\main.c",line="77",arch="armv7e-m"},state="stopped"}],current-thread-id="1"
+[03:51:07.638 UTC] To client: {"seq":0,"type":"response","request_seq":12,"command":"threads","success":true,"body":{"threads":[{"id":1,"name":"1","running":false}]}}
+[03:51:07.641 UTC] From client: stackTrace({"threadId":1,"startFrame":0,"levels":20})
+[03:51:07.641 UTC] GDB command: 17 -stack-info-depth --thread 1 100
+[03:51:07.655 UTC] GDB result: 17 done,depth="1"
+[03:51:07.656 UTC] GDB command: 18 -stack-list-frames --thread 1 0 0
+[03:51:07.676 UTC] GDB result: 18 done,stack=[frame={level="0",addr="0x08002354",func="main",file="D:/Courseworks/2025-2026-2/Real-Time Embedded Systems and Intelligent Control/Homework3_MicLED/Core/Src/main.c",fullname="D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED\\Core\\Src\\main.c",line="77",arch="armv7e-m"}]
+[03:51:07.677 UTC] To client: {"seq":0,"type":"response","request_seq":13,"command":"stackTrace","success":true,"body":{"stackFrames":[{"id":1000,"source":{"name":"main.c","path":"D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED\\Core\\Src\\main.c","sourceReference":0},"line":77,"column":0,"name":"main","instructionPointerReference":"0x08002354"}],"totalFrames":1}}
+[03:51:07.685 UTC] From client: stackTrace({"threadId":1,"startFrame":0,"levels":20})
+[03:51:07.685 UTC] GDB command: 19 -stack-info-depth --thread 1 100
+[03:51:07.694 UTC] GDB result: 19 done,depth="1"
+[03:51:07.694 UTC] GDB command: 20 -stack-list-frames --thread 1 0 0
+[03:51:07.695 UTC] GDB result: 20 done,stack=[frame={level="0",addr="0x08002354",func="main",file="D:/Courseworks/2025-2026-2/Real-Time Embedded Systems and Intelligent Control/Homework3_MicLED/Core/Src/main.c",fullname="D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED\\Core\\Src\\main.c",line="77",arch="armv7e-m"}]
+[03:51:07.696 UTC] To client: {"seq":0,"type":"response","request_seq":14,"command":"stackTrace","success":true,"body":{"stackFrames":[{"id":1001,"source":{"name":"main.c","path":"D:\\Courseworks\\2025-2026-2\\Real-Time Embedded Systems and Intelligent Control\\Homework3_MicLED\\Core\\Src\\main.c","sourceReference":0},"line":77,"column":0,"name":"main","instructionPointerReference":"0x08002354"}],"totalFrames":1}}
+[03:51:08.209 UTC] From client: scopes({"frameId":1000})
+[03:51:08.209 UTC] To client: {"seq":0,"type":"response","request_seq":15,"command":"scopes","success":true,"body":{"scopes":[{"name":"Local","variablesReference":1000,"expensive":false},{"name":"Registers","variablesReference":1001,"expensive":true}]}}
+[03:51:08.217 UTC] From client: variables({"variablesReference":1000})
+[03:51:08.217 UTC] GDB command: 21 -stack-info-depth 100
+[03:51:08.233 UTC] GDB result: 21 done,depth="1"
+[03:51:08.233 UTC] GDB command: 22 -stack-list-variables --thread 1 --frame 0 --simple-values
+[03:51:08.248 UTC] GDB result: 22 done,variables=[]
+[03:51:08.248 UTC] To client: {"seq":0,"type":"response","request_seq":16,"command":"variables","success":true,"body":{"variables":[]}}
+[03:51:10.029 UTC] From client: continue({"threadId":1})
+[03:51:10.029 UTC] GDB command: 23 -exec-continue --thread 1
+[03:51:10.037 UTC] GDB result: 23 running
+[03:51:10.037 UTC] GDB exec async: running,thread-id="all"
+[03:51:10.037 UTC] To client: {"seq":0,"type":"event","event":"continued","body":{"threadId":1,"allThreadsContinued":true}}
+[03:51:10.038 UTC] To client: {"seq":0,"type":"response","request_seq":17,"command":"continue","success":true,"body":{"allThreadsContinued":true}}
+[04:15:39.650 UTC] From client: disconnect({"restart":false})
+[04:15:39.651 UTC] GDB command: 24 -gdb-exit
+[04:15:39.666 UTC] GDB result: 24 exit
+[04:15:39.667 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"log","output":"Cannot execute this command while the target is running.\n"}}
+[04:15:39.667 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"log","output":"Use the \"interrupt\" command to stop the target\n"}}
+[04:15:39.667 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"log","output":"and then try again.\n"}}
+[04:15:39.674 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"openocd.exe is killed by signal SIGTERM"}}
+[04:15:39.674 UTC] To client: {"seq":0,"type":"event","event":"output","body":{"category":"server","output":"gdbserver stopped"}}
+[04:15:39.674 UTC] To client: {"seq":0,"type":"response","request_seq":18,"command":"disconnect","success":true}
