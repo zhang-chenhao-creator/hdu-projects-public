@@ -21,6 +21,11 @@ The focus is on readable source code and reproducible technical context, not on 
 - [`c-programming/student-record-system`](c-programming/student-record-system): console student record system with linked-list storage, role-based users, file I/O, and menu-driven workflows.
 - [`c-programming/linear-regression-house-price`](c-programming/linear-regression-house-price): C implementation of a small linear regression pipeline with data parsing, training, prediction, and verification modules.
 - [`c-programming/snake-game`](c-programming/snake-game): Windows console snake game with buffered rendering, keyboard input, collision logic, and score handling.
+- [`c-programming/sorting-algorithm`](c-programming/sorting-algorithm): console sorting benchmark comparing bubble, selection, insertion, quick, and merge sort with timing measurements.
+
+### Machine Learning
+
+- [`machine-learning/iris-classification`](machine-learning/iris-classification): iris flower classification in both Python (KNN with Tkinter GUI and Matplotlib visualizations) and C (KNN, decision tree, SVM with Makefile build).
 
 ### Robotics
 
