@@ -9,6 +9,7 @@ The focus is on readable source code and reproducible technical context, not on 
 ### Embedded Systems
 
 - [`embedded-systems/oled-data-curve-display`](embedded-systems/oled-data-curve-display): STM32 OLED waveform display using FreeRTOS, ADC, UART, and SSD1306 drawing code.
+- [`embedded-systems/stm32-temperature-alarm`](embedded-systems/stm32-temperature-alarm): STM32F407 temperature alarm firmware using DS18B20, OLED display, K1-K4 parameter setting, W25Qxx/FatFs configuration storage, and continuous VOFA+ telemetry.
 - [`embedded-systems/stm32-signal-generator`](embedded-systems/stm32-signal-generator): STM32F407 waveform generator and measurement system using DAC, DMA, PWM, ADC, UART, and OLED interaction.
 - [`embedded-systems/sound-triggered-delay-lamp`](embedded-systems/sound-triggered-delay-lamp): microphone-triggered delayed lighting firmware on STM32 with ADC sampling and FreeRTOS task structure.
 - [`embedded-systems/stm32-breathing-led`](embedded-systems/stm32-breathing-led): STM32 breathing LED firmware focused on timer/GPIO control and embedded project setup.
