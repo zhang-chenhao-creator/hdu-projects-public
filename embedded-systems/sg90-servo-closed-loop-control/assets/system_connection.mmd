@@ -1,0 +1,29 @@
+flowchart LR
+    subgraph PC["PC 调试端"]
+        UART["串口助手<br/>115200 8N1"]
+    end
+
+    subgraph MCU["STM32F407VET6<br/>HX32F4 学习板"]
+        I2C1["I2C1<br/>PB6/PB7"]
+        I2C2["I2C2<br/>PB10/PB11"]
+        TIM2["TIM2_CH1<br/>PA0"]
+        GPIO["GPIO<br/>PE1/PE3/PE4"]
+        USART["USART1<br/>PA9/PA10"]
+    end
+
+    subgraph Periph["外设"]
+        OLED["OLED 0.96\"<br/>SSD1306"]
+        MPU["MPU6050<br/>GY-521"]
+        Servo["SG90 舵机"]
+        Keys["按键 K1/K3/K4"]
+    end
+
+    I2C1 --> OLED
+    I2C2 --> MPU
+    TIM2 --> Servo
+    GPIO --> Keys
+    USART --> UART
+
+    style MCU fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    style Periph fill:#f1f8e9,stroke:#33691e,stroke-width:2px
+    style PC fill:#fff3e0,stroke:#e65100,stroke-width:2px

@@ -33,6 +33,7 @@ __pycache__/
 *.xlsx
 *.zip
 *.7z
+*.pack
 
 # Firmware/build outputs
 *.exe
@@ -50,3 +51,15 @@ __pycache__/
 *.lnp
 *.log
 *.bak
+*.uvguix.*
+*.build_log.htm
+**/MDK-ARM/*/*.htm
+**/MDK-ARM/*/*.sct
+
+# Corrupted/localized copy kept out until manually cleaned
+embedded-systems/low-power-temperature-logger/README.zh-CN.md
+
+# Project-specific public helper scripts
+!embedded-systems/sg90-servo-closed-loop-control/tools/
+!embedded-systems/sg90-servo-closed-loop-control/tools/**
+embedded-systems/sg90-servo-closed-loop-control/tools/quiet_tune_*.csv
