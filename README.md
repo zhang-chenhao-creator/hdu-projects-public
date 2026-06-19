@@ -9,13 +9,17 @@ The focus is on readable source code and reproducible technical context, not on 
 ### Embedded Systems
 
 - [`embedded-systems/oled-data-curve-display`](embedded-systems/oled-data-curve-display): STM32 OLED waveform display using FreeRTOS, ADC, UART, and SSD1306 drawing code.
+- [`embedded-systems/sg90-servo-closed-loop-control`](embedded-systems/sg90-servo-closed-loop-control): STM32F407 SG90 servo closed-loop controller using MPU6050 feedback, PID control, OLED output, UART logging, and FreeRTOS.
+- [`embedded-systems/low-power-temperature-logger`](embedded-systems/low-power-temperature-logger): STM32F407 low-power temperature and ADC collector using RTC wake-up, STOP mode, button control, and UART output.
 - [`embedded-systems/stm32-temperature-alarm`](embedded-systems/stm32-temperature-alarm): STM32F407 temperature alarm firmware using DS18B20, OLED display, K1-K4 parameter setting, W25Qxx/FatFs configuration storage, and continuous VOFA+ telemetry.
 - [`embedded-systems/stm32-signal-generator`](embedded-systems/stm32-signal-generator): STM32F407 waveform generator and measurement system using DAC, DMA, PWM, ADC, UART, and OLED interaction.
 - [`embedded-systems/sound-triggered-delay-lamp`](embedded-systems/sound-triggered-delay-lamp): microphone-triggered delayed lighting firmware on STM32 with ADC sampling and FreeRTOS task structure.
+- [`embedded-systems/555-timer-astable-circuit`](embedded-systems/555-timer-astable-circuit): LM555 astable oscillator practice note; original course deliverables are excluded.
 - [`embedded-systems/stm32-breathing-led`](embedded-systems/stm32-breathing-led): STM32 breathing LED firmware focused on timer/GPIO control and embedded project setup.
 - [`embedded-systems/six-button-buzzer-led`](embedded-systems/six-button-buzzer-led): STM32 key, buzzer, LED, and FreeRTOS interaction demo.
 - [`embedded-systems/ten-mode-led-patterns`](embedded-systems/ten-mode-led-patterns): STM32 multi-mode LED control firmware with mode switching and timing logic.
 - [`embedded-systems/stc-breathing-led`](embedded-systems/stc-breathing-led): STC microcontroller breathing LED implementation using classic 8051-style tooling.
+- [`embedded-systems/stc-line-following-car`](embedded-systems/stc-line-following-car): portfolio pointer to the separate STC32G smart-car repository.
 
 ### C Programming
 
@@ -27,10 +31,11 @@ The focus is on readable source code and reproducible technical context, not on 
 ### Machine Learning
 
 - [`machine-learning/iris-classification`](machine-learning/iris-classification): iris flower classification in both Python (KNN with Tkinter GUI and Matplotlib visualizations) and C (KNN, decision tree, SVM with Makefile build).
+- [`machine-learning/isolet-letter-recognition`](machine-learning/isolet-letter-recognition): CUDA/C ISOLET English-letter recognition source code with datasets, models, logs, and archives excluded.
 
 ### Robotics
 
-- [`quadruped-robot`](quadruped-robot): selected public-safe reinforcement-learning code snapshots for quadruped/robot locomotion exploration, including PPO training logic, feature preprocessing, reward shaping, and inference-time safety rules.
+- [`robotics/quadruped-robot`](robotics/quadruped-robot): selected public-safe reinforcement-learning code snapshots for quadruped/robot locomotion exploration, including PPO training logic, feature preprocessing, reward shaping, and inference-time safety rules.
 
 ## Public Boundary
 

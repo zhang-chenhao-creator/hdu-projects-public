@@ -1,0 +1,26 @@
+flowchart TB
+    subgraph Main["main()"]
+        Init["HAL_Init / SystemClock / GPIO / I2C1 / I2C2 / TIM2 / USART1"]
+        OLEDInit["OLED_Init()"]
+        MPUInit["MPU6050_DMP_InitWithRetry(3)"]
+        Calib["MPU6050_DMP_CalibrateZero()"]
+        PWMStart["HAL_TIM_PWM_Start()"]
+        KernelInit["osKernelInitialize()"]
+        CreateTasks["MX_FREERTOS_Init()"]
+        Start["osKernelStart()"]
+    end
+
+    subgraph Scheduler["FreeRTOS 调度器"]
+        direction LR
+        CT["ControlTask<br/>10 ms / High"]
+        GT["GuiTask<br/>100 ms / Normal"]
+        KT["KeyTask<br/>事件队列 / Normal"]
+        DT["defaultTask<br/>500 ms / Normal"]
+    end
+
+    Init --> OLEDInit --> MPUInit --> Calib --> PWMStart --> KernelInit --> CreateTasks --> Start --> Scheduler
+
+    style CT fill:#ffebee,stroke:#b71c1c,stroke-width:2px
+    style GT fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    style KT fill:#e3f2fd,stroke:#0d47a1,stroke-width:2px
+    style DT fill:#fffde7,stroke:#f57f17,stroke-width:2px

@@ -1,0 +1,15 @@
+flowchart TD
+    Start([开始]) --> Delay[vTaskDelayUntil 10ms]
+    Delay --> ReadYaw[MPU6050_DMP_GetYaw]
+    ReadYaw --> CheckMode{g_closed_loop?}
+    CheckMode -- 是 --> CalcPID[PID_Calculate target - yaw]
+    CalcPID --> MapPWM[SG90_MapClosedLoopPid 死区映射]
+    MapPWM --> SetPWM[SG90_SetPulseUs]
+    SetPWM --> LoopBack[循环]
+    CheckMode -- 否 --> OpenLoop[直接输出 g_pid_output]
+    OpenLoop --> SetPWM
+    LoopBack --> Delay
+
+    style CalcPID fill:#ffebee,stroke:#b71c1c
+    style MapPWM fill:#e8f5e9,stroke:#1b5e20
+    style CheckMode fill:#fff3e0,stroke:#e65100

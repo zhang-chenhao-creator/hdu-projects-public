@@ -1,0 +1,279 @@
+#include "oled.h"
+#include <string.h>
+#include <stdio.h>
+
+/* OLED 显存 */
+static uint8_t OLED_GRAM[OLED_WIDTH * OLED_PAGES];
+
+/* 6x8 ASCII 字体表 */
+static const uint8_t ASCII_6x8[95][6] = {
+    {0x00,0x00,0x00,0x00,0x00,0x00}, // Space
+    {0x00,0x00,0x4F,0x00,0x00,0x00}, // !
+    {0x00,0x07,0x00,0x07,0x00,0x00}, // "
+    {0x14,0x7F,0x14,0x7F,0x14,0x00}, // #
+    {0x24,0x2A,0x7F,0x2A,0x12,0x00}, // $
+    {0x23,0x13,0x08,0x64,0x62,0x00}, // %
+    {0x36,0x49,0x55,0x22,0x50,0x00}, // &
+    {0x00,0x05,0x03,0x00,0x00,0x00}, // '
+    {0x00,0x1C,0x22,0x41,0x00,0x00}, // (
+    {0x00,0x41,0x22,0x1C,0x00,0x00}, // )
+    {0x14,0x08,0x3E,0x08,0x14,0x00}, // *
+    {0x08,0x08,0x3E,0x08,0x08,0x00}, // +
+    {0x00,0x50,0x30,0x00,0x00,0x00}, // ,
+    {0x08,0x08,0x08,0x08,0x08,0x00}, // -
+    {0x00,0x60,0x60,0x00,0x00,0x00}, // .
+    {0x20,0x10,0x08,0x04,0x02,0x00}, // /
+    {0x3E,0x51,0x49,0x45,0x3E,0x00}, // 0
+    {0x00,0x42,0x7F,0x40,0x00,0x00}, // 1
+    {0x42,0x61,0x51,0x49,0x46,0x00}, // 2
+    {0x21,0x41,0x45,0x4B,0x31,0x00}, // 3
+    {0x18,0x14,0x12,0x7F,0x10,0x00}, // 4
+    {0x27,0x45,0x45,0x45,0x39,0x00}, // 5
+    {0x3C,0x4A,0x49,0x49,0x30,0x00}, // 6
+    {0x01,0x71,0x09,0x05,0x03,0x00}, // 7
+    {0x36,0x49,0x49,0x49,0x36,0x00}, // 8
+    {0x06,0x49,0x49,0x29,0x1E,0x00}, // 9
+    {0x00,0x36,0x36,0x00,0x00,0x00}, // :
+    {0x00,0x56,0x36,0x00,0x00,0x00}, // ;
+    {0x08,0x14,0x22,0x41,0x00,0x00}, // <
+    {0x14,0x14,0x14,0x14,0x14,0x00}, // =
+    {0x00,0x41,0x22,0x14,0x08,0x00}, // >
+    {0x02,0x01,0x51,0x09,0x06,0x00}, // ?
+    {0x32,0x49,0x79,0x41,0x3E,0x00}, // @
+    {0x7E,0x11,0x11,0x11,0x7E,0x00}, // A
+    {0x7F,0x49,0x49,0x49,0x36,0x00}, // B
+    {0x3E,0x41,0x41,0x41,0x22,0x00}, // C
+    {0x7F,0x41,0x41,0x22,0x1C,0x00}, // D
+    {0x7F,0x49,0x49,0x49,0x41,0x00}, // E
+    {0x7F,0x09,0x09,0x09,0x01,0x00}, // F
+    {0x3E,0x41,0x49,0x49,0x7A,0x00}, // G
+    {0x7F,0x08,0x08,0x08,0x7F,0x00}, // H
+    {0x00,0x41,0x7F,0x41,0x00,0x00}, // I
+    {0x20,0x40,0x41,0x3F,0x01,0x00}, // J
+    {0x7F,0x08,0x14,0x22,0x41,0x00}, // K
+    {0x7F,0x40,0x40,0x40,0x40,0x00}, // L
+    {0x7F,0x02,0x0C,0x02,0x7F,0x00}, // M
+    {0x7F,0x04,0x08,0x10,0x7F,0x00}, // N
+    {0x3E,0x41,0x41,0x41,0x3E,0x00}, // O
+    {0x7F,0x09,0x09,0x09,0x06,0x00}, // P
+    {0x3E,0x41,0x51,0x21,0x5E,0x00}, // Q
+    {0x7F,0x09,0x19,0x29,0x46,0x00}, // R
+    {0x46,0x49,0x49,0x49,0x31,0x00}, // S
+    {0x01,0x01,0x7F,0x01,0x01,0x00}, // T
+    {0x3F,0x40,0x40,0x40,0x3F,0x00}, // U
+    {0x1F,0x20,0x40,0x20,0x1F,0x00}, // V
+    {0x3F,0x40,0x38,0x40,0x3F,0x00}, // W
+    {0x63,0x14,0x08,0x14,0x63,0x00}, // X
+    {0x07,0x08,0x70,0x08,0x07,0x00}, // Y
+    {0x21,0x41,0x51,0x61,0x7F,0x00}, // Z
+};
+
+/**
+  * @brief  向OLED写入命令
+  */
+void OLED_WriteCmd(uint8_t cmd)
+{
+    uint8_t buf[2] = {0x00, cmd};
+    HAL_I2C_Master_Transmit(&OLED_I2C, OLED_ADDR, buf, 2, 100);
+}
+
+/**
+  * @brief  向OLED写入数据
+  */
+void OLED_WriteData(uint8_t data)
+{
+    uint8_t buf[2] = {0x40, data};
+    HAL_I2C_Master_Transmit(&OLED_I2C, OLED_ADDR, buf, 2, 10);
+}
+
+/**
+  * @brief  初始化OLED
+  */
+HAL_StatusTypeDef OLED_Init(void)
+{
+    HAL_Delay(200);
+    
+    // 基础设置
+    OLED_WriteCmd(0xAE); // Display OFF
+    OLED_WriteCmd(0xD5); // Set display clock divide ratio
+    OLED_WriteCmd(0x80); // Set clock as 100 frames/second
+    OLED_WriteCmd(0xA8); // Set multiplex ratio
+    OLED_WriteCmd(0x3F); // 1/64 duty
+    OLED_WriteCmd(0xD3); // Set display offset
+    OLED_WriteCmd(0x00); // No offset
+    OLED_WriteCmd(0x40); // Set display start line
+    
+    // 地址设置
+    OLED_WriteCmd(0x8D); // Charge pump setting
+    OLED_WriteCmd(0x14); // Enable charge pump
+    OLED_WriteCmd(0x20); // Memory addressing mode
+    OLED_WriteCmd(0x00); // Horizontal addressing mode
+    OLED_WriteCmd(0xA1); // Set segment re-map
+    OLED_WriteCmd(0xC8); // Set COM output scan direction
+    
+    // COM引脚设置
+    OLED_WriteCmd(0xDA); // Set COM pins
+    OLED_WriteCmd(0x12); // Alternative COM configuration
+    
+    // 对比度设置
+    OLED_WriteCmd(0x81); // Set contrast
+    OLED_WriteCmd(0xCF); // Contrast value
+    
+    // 预充电设置
+    OLED_WriteCmd(0xD9); // Set pre-charge period
+    OLED_WriteCmd(0xF1); // Pre-charge period
+    
+    // VCOMH设置
+    OLED_WriteCmd(0xDB); // Set VCOMH deselect level
+    OLED_WriteCmd(0x40); // VCOMH level
+    
+    OLED_WriteCmd(0xA4); // Entire display ON
+    OLED_WriteCmd(0xA6); // Normal display (not inverse)
+    OLED_WriteCmd(0xAF); // Display ON
+    
+    OLED_Clear();
+    return HAL_OK;
+}
+
+/**
+  * @brief  设置光标位置
+  */
+void OLED_SetCursor(uint8_t x, uint8_t y)
+{
+    OLED_WriteCmd(0x21); // Set column address
+    OLED_WriteCmd(x);
+    OLED_WriteCmd(127);
+    OLED_WriteCmd(0x22); // Set page address
+    OLED_WriteCmd(y);
+    OLED_WriteCmd(7);
+}
+
+/**
+  * @brief  清屏
+  */
+void OLED_Clear(void)
+{
+    memset(OLED_GRAM, 0x00, sizeof(OLED_GRAM));
+    OLED_Refresh();
+}
+
+/**
+  * @brief  刷新显存到屏幕（修复版）
+  */
+void OLED_Refresh(void)
+{
+    uint8_t i, j;
+    uint8_t buf[17]; // 1字节命令 + 16字节数据
+    
+    buf[0] = 0x40; // Data command
+    
+    for (i = 0; i < OLED_PAGES; i++) {
+        // 设置列和页地址
+        OLED_WriteCmd(0x21); // Column address
+        OLED_WriteCmd(0);
+        OLED_WriteCmd(127);
+        OLED_WriteCmd(0x22); // Page address
+        OLED_WriteCmd(i);
+        OLED_WriteCmd(i);
+        
+        // 分批发送数据（每次16字节）
+        for (j = 0; j < OLED_WIDTH; j += 16) {
+            uint8_t len = (OLED_WIDTH - j < 16) ? (OLED_WIDTH - j) : 16;
+            memcpy(&buf[1], &OLED_GRAM[i * OLED_WIDTH + j], len);
+            HAL_I2C_Master_Transmit(&OLED_I2C, OLED_ADDR, buf, len + 1, 100);
+        }
+    }
+}
+
+/**
+  * @brief  画点
+  */
+void OLED_DrawPixel(uint8_t x, uint8_t y, uint8_t color)
+{
+    if (x >= OLED_WIDTH || y >= OLED_HEIGHT) return;
+    
+    uint8_t page = y / 8;
+    uint8_t bit = y % 8;
+    
+    if (color) {
+        OLED_GRAM[page * OLED_WIDTH + x] |= (1 << bit);
+    } else {
+        OLED_GRAM[page * OLED_WIDTH + x] &= ~(1 << bit);
+    }
+}
+
+/**
+  * @brief  显示字符
+  */
+void OLED_DrawChar(uint8_t x, uint8_t y, char ch, uint8_t size)
+{
+    if (ch < ' ' || ch > '~') return;
+    
+    uint8_t idx = ch - ' ';
+    /* 若索引超出当前已初始化字体范围，尝试将小写转为大写显示 */
+    if (idx >= (sizeof(ASCII_6x8) / sizeof(ASCII_6x8[0]))) {
+        if (ch >= 'a' && ch <= 'z') {
+            idx = (ch - 'a' + 'A') - ' ';
+        } else {
+            return;
+        }
+    }
+    
+    uint8_t i;
+    const uint8_t *font = ASCII_6x8[idx];
+    uint8_t py = y * 8;  /* y 为 page 号(0~7)，转换为像素坐标 */
+    
+    for (i = 0; i < 6; i++) {
+        uint8_t temp = font[i];
+        for (uint8_t j = 0; j < 8; j++) {
+            if (temp & 0x01) {
+                OLED_DrawPixel(x + i, py + j, 1);
+            } else {
+                OLED_DrawPixel(x + i, py + j, 0);
+            }
+            temp >>= 1;
+        }
+    }
+}
+
+/**
+  * @brief  显示字符串
+  */
+void OLED_ShowString(uint8_t x, uint8_t y, const char *str, uint8_t size)
+{
+    uint8_t original_x = x;
+    while (*str) {
+        if (*str == '\n') {
+            x = original_x;
+            y += 1;  /* 换行：下一 page */
+            str++;
+            continue;
+        }
+        OLED_DrawChar(x, y, *str++, size);
+        x += 6;
+        if (x > OLED_WIDTH - 6) {
+            x = original_x;
+            y += 1;  /* 换行：下一 page */
+        }
+        if (y >= OLED_PAGES) break;  /* page 越界检查 */
+    }
+}
+
+/**
+  * @brief  显示数字
+  */
+void OLED_ShowNum(uint8_t x, uint8_t y, uint32_t num, uint8_t len)
+{
+    char buf[12];
+    snprintf(buf, sizeof(buf), "%*lu", len, num);
+    OLED_ShowString(x, y, buf, 16);
+}
+
+/**
+  * @brief  全屏填充
+  */
+void OLED_Fill(uint8_t dat)
+{
+    memset(OLED_GRAM, dat, sizeof(OLED_GRAM));
+    OLED_Refresh();
+}
